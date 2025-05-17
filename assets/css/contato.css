@@ -1,0 +1,48 @@
+/* Contato Section */
+.contato {
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xl);
+}
+
+.final-cta {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-color);
+}
+
+.final-cta h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+}
+
+.gradient-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
+    color: var(--text-color) !important;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 300px;
+}
+
+.gradient-cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(151, 71, 255, 0.3);
+}

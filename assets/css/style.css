@@ -1,10 +1,10 @@
 /* Base Styles */
 :root {
     /* Cores principais */
-    --bg-color: #0B0F19;
+    --bg-color: #030712;
     --text-color: #FFFFFF;
     --text-secondary: #E0E0E0;
-    --accent-color: #47FF9F;
+    --accent-color: #B97FF4;
     
     /* Cores do gradiente */
     --gradient-start: #9747FF;
@@ -16,7 +16,7 @@
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
-    --spacing-xl: 6rem;
+    --spacing-xl: 8rem;
     
     /* Fontes */
     --font-primary: 'Montserrat', sans-serif;
@@ -87,6 +87,7 @@ a:hover {
 section {
     padding: var(--spacing-xl) 0;
     position: relative;
+    margin-bottom: var(--spacing-lg);
 }
 
 .gradient-text {
@@ -103,12 +104,7 @@ section {
 }
 
 .gradient-divider {
-    height: 4px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-middle), var(--gradient-end));
-    width: 80%;
-    margin: var(--spacing-lg) auto 0;
-    border-radius: 2px;
-    opacity: 0.7;
+    display: none;
 }
 
 .emoji {
@@ -119,80 +115,12 @@ section {
 
 /* Header Styles */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: var(--spacing-sm) 0;
-    background-color: rgba(11, 15, 25, 0.9);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo h2 {
-    font-size: 1.5rem;
-    margin: 0;
-    font-weight: 700;
-}
-
-.nav-menu ul {
-    display: flex;
-    list-style: none;
-}
-
-.nav-menu ul li {
-    margin-left: var(--spacing-md);
-}
-
-.nav-menu ul li a {
-    font-weight: 500;
-    padding: 0.5rem 0;
-    position: relative;
-}
-
-.nav-menu ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-middle));
-    transition: width 0.3s ease;
-}
-
-.nav-menu ul li a:hover::after {
-    width: 100%;
-}
-
-.btn-contato {
-    background-color: var(--accent-color);
-    color: var(--bg-color) !important;
-    padding: 0.5rem 1.5rem !important;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-contato:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(71, 255, 159, 0.2);
-}
-
-.menu-mobile {
     display: none;
 }
 
 /* Hero Section */
 .hero {
-    padding-top: calc(var(--spacing-xl) + 80px);
+    padding-top: var(--spacing-lg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -249,7 +177,7 @@ section {
     display: inline-flex;
     align-items: center;
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--bg-color) !important;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -260,7 +188,8 @@ section {
 
 .cta-button:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(71, 255, 159, 0.3);
+    box-shadow: 0 15px 30px rgba(185, 127, 244, 0.3);
+    background-color: #c48ff8;
 }
 
 .cta-button .icon {
@@ -271,6 +200,7 @@ section {
 /* Sobre Section */
 .sobre {
     position: relative;
+    margin-top: var(--spacing-xl);
 }
 
 .section-intro {
@@ -306,7 +236,7 @@ section {
 
 /* Ferramentas Section */
 .ferramentas {
-    background-color: rgba(15, 20, 30, 0.5);
+    margin-top: var(--spacing-xl);
 }
 
 .section-header {
@@ -391,6 +321,7 @@ section {
 /* Cases Section */
 .cases {
     padding-top: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 
 .coffee-icon {
@@ -479,95 +410,72 @@ section {
     transform: scale(1.03);
 }
 
-/* Depoimentos Section */
-.depoimentos {
+/* Estatísticas Section */
+.estatisticas {
     background-color: rgba(15, 20, 30, 0.5);
+    margin-top: var(--spacing-xl);
 }
 
-.testimonials-slider {
-    max-width: 800px;
+.stats-container {
+    max-width: 900px;
     margin: 0 auto;
-    position: relative;
 }
 
-.testimonial-item {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: var(--spacing-lg);
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stat-item {
     text-align: center;
-    position: relative;
-}
-
-.quote-icon {
-    font-size: 4rem;
-    color: var(--gradient-middle);
-    opacity: 0.3;
-    position: absolute;
-    top: -20px;
-    left: 30px;
-}
-
-.testimonial-text {
-    font-size: 1.3rem;
-    font-style: italic;
-    margin-bottom: var(--spacing-md);
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-sm);
-}
-
-.author-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.author-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.author-info h4 {
-    margin-bottom: 0;
-    font-size: 1.1rem;
-}
-
-.author-info p {
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-.testimonial-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: var(--spacing-md);
-}
-
-.control {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
     transition: all 0.3s ease;
 }
 
-.control.active {
-    background-color: var(--gradient-middle);
-    transform: scale(1.2);
+.stat-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--accent-color);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.stats-description {
+    text-align: center;
+    margin: var(--spacing-md) 0 var(--spacing-lg);
+}
+
+.partnership {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.partnership h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--accent-color);
 }
 
 /* Contato Section */
 .contato {
     padding-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 
 .contact-container {
@@ -615,14 +523,14 @@ section {
 .form-group textarea:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 0 2px rgba(71, 255, 159, 0.3);
+    box-shadow: 0 0 0 2px rgba(185, 127, 244, 0.3);
 }
 
 .submit-button {
     display: inline-flex;
     align-items: center;
     background-color: var(--accent-color);
-    color: var(--bg-color);
+    color: var(--bg-color) !important;
     padding: 1rem 2rem;
     border-radius: 50px;
     font-weight: 600;
@@ -634,7 +542,8 @@ section {
 
 .submit-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(71, 255, 159, 0.2);
+    box-shadow: 0 10px 20px rgba(185, 127, 244, 0.2);
+    background-color: #c48ff8;
 }
 
 .submit-button .icon {
@@ -687,7 +596,7 @@ section {
 
 /* Footer */
 .footer {
-    background-color: rgba(10, 14, 23, 0.8);
+    background-color: rgba(3, 7, 18, 0.8);
     padding: var(--spacing-lg) 0;
 }
 
@@ -695,7 +604,6 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-md);
 }
 
 .footer-logo h3 {
@@ -735,12 +643,45 @@ section {
 
 .footer-bottom {
     text-align: center;
-    padding-top: var(--spacing-md);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: var(--spacing-md);
 }
 
 .footer-bottom p {
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin: 0;
+}
+
+.cta-button-large {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--bg-color) !important;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: var(--spacing-lg) auto;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.cta-button-large:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(185, 127, 244, 0.3);
+    background-color: #c48ff8;
+}
+
+.cta-button-large .icon {
+    margin-right: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.cta-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: var(--spacing-lg) 0;
 }
