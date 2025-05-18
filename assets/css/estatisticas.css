@@ -2,9 +2,7 @@
 .estatisticas {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-xl) 0;
-    background-color: #030712;
 }
-
 
 .stats-wrapper {
     max-width: 900px;
