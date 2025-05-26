@@ -254,6 +254,7 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
 }
 
 .tool-card {
@@ -309,6 +310,10 @@ section {
     background-color: #FF47B7;
 }
 
+.hicode-icon {
+    background-color: #91ff47;
+}
+
 .tool-card h3 {
     margin-bottom: var(--spacing-xs);
 }
@@ -316,6 +321,11 @@ section {
 .tool-card p {
     color: var(--text-secondary);
     font-size: 1rem;
+}
+
+.hicode-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    margin-top: var(--spacing-md);
 }
 
 /* Cases Section */
